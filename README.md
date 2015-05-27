@@ -12,3 +12,15 @@ It hardly seemed right. A coding competition might just not allow Python for a s
 While browsing for possible solutions to this problem I came across this [page](http://discuss.codechef.com/questions/7992/how-can-i-store-very-very-large-integers-accurately) where the following snippet in the discussion caught my attention - "...Some languages such as Java or Python have big integer classes built in. In other languages such as C/C++, the best way of handling these is to store them as strings. You can write methods to multiply, divide, add or subtract these just as you were taught in school using pen and paper."
 
 This provided the inspiration for me to try and come up with my own library that can solve problems where there is a need to store BigIntegers
+
+One can run the sample test code provided in BigIntegerTest.cpp by using the makefile provided. Steps to be followed while building BigIntegerTest.cpp
+
+```
+make all
+```
+This would internally execute the following ``` g++ ``` command
+```
+g++ BigIntegerTest.cpp BigInteger.cpp -o BigIntegerTest
+```
+In your current directory you would find an executable with the name ```BigIntegerTest```
+You can run the test by running this executable ```./BigIntegerTest```
