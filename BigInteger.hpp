@@ -46,12 +46,7 @@ class BigInteger
         inline void vector_start_size()
         {
             vector_start_idx = VECTOR_START_LENGTH;
-            // A reserve() doesn't provide a container of size 512. Do explicit push_back's
-            bits.reserve(VECTOR_START_LENGTH);
-            for(unsigned int i=0; i<VECTOR_START_LENGTH; ++i)
-            {
-                bits.push_back(0);
-            }
+            bits.resize(VECTOR_START_LENGTH);
         }
 
         inline void load_vector_from_string(const string& initial_number)
