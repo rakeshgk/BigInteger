@@ -7,6 +7,7 @@
 #include <sstream>
 #include <algorithm>
 #include <numeric>
+#include <iterator>
 
 using namespace std;
 
