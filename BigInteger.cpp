@@ -31,9 +31,31 @@ void BigInteger::multiply(const unsigned long number)
     while(carry)
     {
         vector_start_idx -= 1;
+        if(vector_start_idx == 0)
+        {
+            resize_container();
+        }
         bits[vector_start_idx] = carry % 10;
         carry /= 10;
     }
+}
+
+void BigInteger::resize_container()
+{
+    unsigned int current_size = bits.size();
+    unsigned int new_size = current_size * 2;
+    bits.resize(new_size);
+
+    // Move the bits from 0 to current_size - 1 TO current_size + 1 to new_size
+    // Replace the bits from 0 to current_size - 1 with 0
+    for(unsigned int i=0; i<current_size; ++i)
+    {
+        bits[new_size - i - 1] = bits[current_size - i - 1];
+        bits[current_size - i - 1] = 0;
+    }
+
+    // Also change the vector_start_idx after resizing the container
+    vector_start_idx = current_size;
 }
 
 unsigned long BigInteger::sum_of_bits()

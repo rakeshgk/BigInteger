@@ -43,6 +43,8 @@ class BigInteger
         vector<unsigned int> bits;
         unsigned int vector_start_idx;
 
+        void resize_container();
+
         inline void vector_start_size()
         {
             vector_start_idx = VECTOR_START_LENGTH;
